@@ -37,9 +37,7 @@ export default class App extends Component {
       return cast.map( item => `${baseUrl}&t=${item.Title}&y=${item.Year}`);
     };
 
-
-
-    getRatings = (resp) => {
+    getRatings = resp => {
       const ratings = {};
       resp.Ratings.forEach( (r, idx) => ratings[`Ratings${idx}`] = r.Value );
       return ratings;
@@ -95,8 +93,6 @@ export default class App extends Component {
                 isDataLoaded: true
             });
         });
-
-
     }
 
     render() {
@@ -111,6 +107,5 @@ export default class App extends Component {
             </div>
         )
     }
-
 }
 

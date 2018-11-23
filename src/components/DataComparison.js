@@ -20,10 +20,11 @@ export default class DataComparison extends Component {
     onClickHandler (event) {
         const {target} = event;
         if ( target.type === 'checkbox' ) {
-            const itemsToShow = [...this.state.itemsToShow];
+            const itemsToShow = this.state.itemsToShow.map(item => Object.assign({}, item));
             itemsToShow.find(el => (el.name === target.name)).show = target.checked;
             this.optionsToShow = Object.assign({}, this.props.options);
             this.optionsToShow.series = this.optionsToShow.series
+                .slice()
                 .filter( s =>  itemsToShow.find( i => (i.name === s.name)).show);
 
             this.setState({itemsToShow: itemsToShow});

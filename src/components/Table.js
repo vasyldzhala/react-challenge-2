@@ -10,7 +10,7 @@ const Table = (props) => {
 			const row = props.dataStructure
 				.map(property => <td key = {property.name}>{item[property.name]}</td>);
         	return  (
-        		<tr key = {item.key}>
+        		<tr key = {item.imdbID}>
 					<td>
 						<input type="checkbox" defaultChecked={false} name={item.Title} />
 					</td>
